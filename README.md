@@ -1,6 +1,6 @@
 # todo-app  
-***A browser based API testing tool***  
-A Web Application for securely managing a To Do List. 
+
+*** A Web Application for securely managing a To Do List. *** 
 
 # PR phase  1
 [PR](https://github.com/Oubaida996/todo-app/pull/1)  
