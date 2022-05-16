@@ -1,0 +1,53 @@
+.item {
+    margin-bottom: 3px;
+    .card {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        .top {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            grid-row: 1/2;
+            // height: 30px;
+            div {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                width: 50%;
+                .status {
+                    font-size: small;
+                    padding: 1px 5px;
+                    border-radius: 6px;
+                    color: #FFFCDC;
+                    text-align: center;
+                    width: 5rem;
+                }
+                .name {
+                    font-weight: 600;
+                    font-size: 1rem;
+                    color: #EDD2F3;
+                }
+            }
+        }
+        .buttom {
+            grid-row: 2/3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .item-details {
+                grid-column: 1/2;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: start;
+                align-items: center;
+            }
+            .difficulty {
+                grid-column: 2/3;
+                display: flex;
+                align-items: flex-end;
+                justify-content: end;
+            }
+        }
+    }
+}
