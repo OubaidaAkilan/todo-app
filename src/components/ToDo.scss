@@ -1,0 +1,15 @@
+.container {
+    background-color: #FFFCDC;
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    height: 900px;
+}
+
+.navbar {
+    grid-column: 2/3;
+    background-color: #516BEB;
+    box-shadow: none;
+    font-weight: 600;
+    color: #FFFCDC;
+}

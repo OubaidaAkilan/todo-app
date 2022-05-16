@@ -1,0 +1,39 @@
+.form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0px 5px;
+    .add-item {
+        grid-column: 1/2;
+        // background-color: rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 300px;
+        .label-form {
+            margin: 0.4rem 0px;
+            border-radius: 15px;
+            font-weight: 500;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #EDD2F3;
+        }
+    }
+    .list {
+        padding: 0px 0px 0px 20px;
+        grid-column: 2/3;
+        // background-color: red;
+    }
+}
+
+.success-btn {
+    background-color: #84DFFF;
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #FFFCDC;
+    pointer-events: none;
+}
