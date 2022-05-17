@@ -7,7 +7,7 @@
 
 
 # netlify  
-[netlify](https://6282b2117348151254afabf0--cheery-sprite-e211ca.netlify.app/)  
+[netlify](https://deploy-preview-2--cheery-sprite-e211ca.netlify.app/)  
 
 
 
