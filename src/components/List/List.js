@@ -1,5 +1,8 @@
 import React from 'react'
 import './list.scss'
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import PaginationItem from '@mui/material/PaginationItem';
 
 import Item from '../Item/Item';
 export default function List(props) {
@@ -7,13 +10,19 @@ export default function List(props) {
         <div className='list'>
             {
                 props.list.map((item) => {
-                    return <Item key={item.id} item={item} toggleComplete={props.toggleComplete} deleteItem={props.deleteItem} />
+
+                    return <Item key={item.id} item={item} />
                 })
             }
+            {/* <Stack spacing={2}>
 
-            {/* <Item />
-            <Item />
-            <Item /> */}
+
+                <Pagination count={10} color="primary"
+
+                />
+
+            </Stack> */}
+
 
         </div>
     )
