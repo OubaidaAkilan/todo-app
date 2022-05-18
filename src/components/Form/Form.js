@@ -1,45 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import useForm from '../../hooks/form';
 import { v4 as uuid } from 'uuid';
 import List from '../List/List'
 import './Form.scss'
 import { Card, Elevation } from "@blueprintjs/core";
+import Button from '@mui/material/Button';
+import { useContext, useRef } from 'react';
+import { ListContext } from '../../context/list';
 
 export default function Form() {
-    const [list, setList] = useState([]);
-    const [incomplete, setIncomplete] = useState([]);
-    const { handleChange, handleSubmit } = useForm(addItem);
+    const list = useContext(ListContext);
+    const itemDetailRef = useRef();
+    const assigneeRef = useRef();
+    const difficultyRef = useRef();
 
-    function addItem(item) {
-        console.log(item);
-        item.id = uuid();
-        item.complete = false;
-        setList([...list, item]);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const itemDetail = itemDetailRef.current.value;
+        const assginee = assigneeRef.current.value;
+        const difficulty = difficultyRef.current.value;
+
+
+        let item = {
+            id: uuid(),
+            itemDetail: itemDetail,
+            assginee: assginee,
+            difficulty: difficulty,
+            complete: false,
+        }
+        // console.log({ item });
+        list.setList([...list.list, item]);
     }
 
-    function deleteItem(id) {
-        const items = list.filter(item => item.id !== id);
-        setList(items);
-    }
 
-    function toggleComplete(id) {
 
-        const items = list.map(item => {
-            if (item.id == id) {
-                item.complete = !item.complete;
-            }
-            return item;
-        });
 
-        setList(items);
-
-    }
-
-    useEffect(() => {
-        let incompleteCount = list.filter(item => !item.complete).length;
-        setIncomplete(incompleteCount);
-        document.title = `To Do List: ${incomplete}`;
-    }, [list]);
     return (
         <div className='form'>
 
@@ -47,16 +41,18 @@ export default function Form() {
                 <form onSubmit={handleSubmit}>
                     <h3>Add To Do Item</h3>
                     <label className='label-form' htmlFor="">To Do Item</label>
-                    <input onChange={handleChange} name="text" type="text" placeholder="Item Details" />
+                    <input ref={itemDetailRef} name="itemDetail" type="text" placeholder="Item Details" />
                     <label className='label-form' htmlFor="">Assigned To</label>
-                    <input onChange={handleChange} name="assignee" type="text" placeholder="Assignee Name" />
+                    <input ref={assigneeRef} name="assignee" type="text" placeholder="Assignee Name" />
                     <label className='label-form' htmlFor="">Difficulty</label>
-                    <input type={'range'} onChange={handleChange} defaultValue={3} min={1} max={5} />
-                    <button type='submit'>Add Item</button>
+                    <input ref={difficultyRef} type={'range'} defaultValue={3} min={1} max={5} />
+
+                    <Button size='small' className='success-btn' variant="contained" type='submit'>Add Item</Button>
                 </form>
             </Card >
-
-            <List list={list} toggleComplete={toggleComplete} deleteItem={deleteItem} />
+            {/*  toggleComplete={toggleComplete} deleteItem={deleteItem} */}
+            {/* {list.stateList === 'incomplete' ? list.IncompleteList : list.completeList} */}
+            <List list={list.stateList === 'incomplete' ? list.list : list.completeList} />
         </div >
     )
 }
