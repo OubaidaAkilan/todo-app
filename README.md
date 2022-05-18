@@ -22,10 +22,14 @@ In Phase 1, we’re going to perform some refactoring of the To Do application a
  
         - Describe how global state is consumed by the components  
 
-        To make global state we need to use context api hook which help us to make state as global and all childre can scope the state just we need to create context and wrape all cildren that will consumed the state.
+        To make global state we need to use context api hook which help us to make    
+        state as global and all childre can scope the state just we need to create    
+        context and wrape all cildren that will consumed the state.
 
-       - Describe the operation of the hook: useForm()
-       useForm is a hook that allows to manage forms. It has some action methods that create, edit and clone the form. The hook return value comes to according to the called action and it can run different logic depending on the action.
+       - Describe the operation of the hook: useForm()  
+       useForm is a hook that allows to manage forms. It has some action   
+       methods that create, edit and clone the form. The hook return value comes   
+       to according to the called action and it can run different logic depending on the action.  
 
 assitant by :[useForm](https://refine.dev/docs/core/hooks/useForm/)
         
