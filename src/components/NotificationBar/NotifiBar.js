@@ -10,7 +10,8 @@ export default function NotifiBar() {
 
     useEffect(() => {
         console.log('obieda');
-        let newLength = list.IncompleteList.length;
+        console.log(list.list);
+        let newLength = list.list.filter(item => !item.complete).length;
         setLength(newLength);
 
     }, [list]);
