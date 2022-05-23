@@ -4,15 +4,19 @@ import NotifiBar from '../NotificationBar/NotifiBar'
 import './Body.scss'
 
 import ListProvider from '../../context/list';
+import SettingProvider from '../../context/setting';
 
 export default function Body() {
     return (
 
         <div className='Body'>
-            <ListProvider>
-                <NotifiBar />
-                <Form />
-            </ListProvider>
+            <SettingProvider>
+                <ListProvider>
+                    <NotifiBar />
+                    <Form />
+                </ListProvider>
+            </SettingProvider>
+
 
 
 
