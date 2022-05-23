@@ -39,7 +39,7 @@ assitant by :[useForm](https://refine.dev/docs/core/hooks/useForm/)
         
         
 # Phase 2 Requirements 
-In Phase 1, , we’re going to extend the functionality of our application by allowing the user to make some decisions on how they would like the application to function. Specifically, we’ll let them make changes to 2 settings.  
+In Phase 2 , we’re going to extend the functionality of our application by allowing the user to make some decisions on how they would like the application to function. Specifically, we’ll let them make changes to 2 settings.  
 - Implement the Context API to make some basic application settings available to components
  - How many To Do Items to show at once
  - Whether or not to show completed items
