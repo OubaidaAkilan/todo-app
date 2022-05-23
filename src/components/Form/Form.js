@@ -6,10 +6,12 @@ import Button from '@mui/material/Button';
 import { useContext, useRef } from 'react';
 import { ListContext } from '../../context/list';
 import { SettingContext } from '../../context/setting';
+import { LoginContext } from '../../context/login';
 
 export default function Form() {
     const list = useContext(ListContext);
     const setting = useContext(SettingContext);
+    const login = useContext(LoginContext);
     const itemDetailRef = useRef();
     const assigneeRef = useRef();
     const difficultyRef = useRef();
