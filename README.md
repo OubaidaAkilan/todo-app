@@ -11,9 +11,18 @@
 # PR phase  3
 [PR](https://github.com/Oubaida996/todo-app/pull/6)  
 
+# PR phase 4
+[PR](https://github.com/Oubaida996/todo-app/pull/7)
+
 
 # netlify  
-[netlify](https://deploy-preview-6--cheery-sprite-e211ca.netlify.app/)  
+[netlify](https://deploy-preview-7--cheery-sprite-e211ca.netlify.app/)  
+
+
+role (admin) can add items to list and delete  
+role (user)  can not add items to list and do any thing
+
+
 
 
 
@@ -61,3 +70,8 @@ As a user, I want to make sure that my To Do items are only viewable to users th
 As a user, I want to ensure that only fellow users that are allowed to “create”, based on their user type, can add new To Do Items  
 As a user, I want to ensure that only fellow users that are allowed to “update”, based on their user type, can mark To Do Items complete  
 As a user, I want to ensure that only fellow users that are allowed to “delete”, based on their user type, can delete new To Do Items  
+
+
+# Phase 4 Requirements   
+In Phase 4, we will finalize the functionality of the application by connecting to live servers   
+for login, authorization, and data access
