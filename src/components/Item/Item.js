@@ -1,7 +1,7 @@
 import React from 'react'
 import './Item.scss'
 import { Card, Elevation, Icon } from "@blueprintjs/core";
-
+import Auth from '../auth/auth';
 import { useContext } from 'react';
 import { ListContext } from '../../context/list';
 import KToggleButton from './KToggleButton';
@@ -15,7 +15,9 @@ export default function Item(props) {
                         <span className='status' style={{ backgroundColor: props.item.complete ? '#1B5E20' : '#C62828' }}>{props.item.complete ? 'complete' : 'pending'}</span>
                         <span className='name'>{props.item.assginee}</span>
                     </div>
-                    <Icon intent='danger' icon='cross' onClick={() => { list.deleteItem(props.item.id) }}></Icon>
+                    <Auth action={'delete'}>
+                        <Icon intent='danger' icon='cross' onClick={() => { list.deleteItem(props.item.id) }}></Icon>
+                    </Auth>
 
 
                 </div>
