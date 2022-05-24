@@ -20,9 +20,9 @@ export default function LoginProvider(props) {
 
 
 
-    async function signUp(username, pwd) {
+    async function signUp(username, pwd, role) {
 
-        await superagent.post(`${API}/signup`).send({ userName: username, pwd: pwd });
+        await superagent.post(`${API}/signup`).send({ userName: username, pwd: pwd, role: role });
         // console.log(response.body);
 
     }
@@ -34,7 +34,7 @@ export default function LoginProvider(props) {
     const login = async (username, password) => {
         // localhost:3030/signin
         const response = await superagent.post(`${API}/signin`).set('authorization', `Basic ${base64.encode(`${username}:${password}`)}`);
-        console.log('inside login >> response', response);//userInfo + token
+        // console.log('inside login >> response', response);//userInfo + token
         validateMyUser(response.body)
     }
 
@@ -69,7 +69,7 @@ export default function LoginProvider(props) {
         validateMyUser(myUserInfo);
     }, [])
 
-
+    //authorize
     const canDo = (capability) => {
         // optional chaining 
         return user?.actions?.includes(capability);
