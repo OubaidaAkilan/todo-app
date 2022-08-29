@@ -16,7 +16,7 @@
 
 
 # netlify  
-[netlify](https://deploy-preview-7--cheery-sprite-e211ca.netlify.app/)  
+[live url](https://to-do-obieda.netlify.app/)  
 
 
 role (admin) can add items to list and delete  
